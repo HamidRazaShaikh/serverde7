@@ -11,12 +11,15 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(cors());
 
+app.get ('/get',function (req,res){
+    res.send({data : data});
+    console.log(data);
+});
+
 app.post('/add', function (req, res) {
     data.push(req.body);
     console.log(req.body);
     res.send({status: 200, data: data})
-
-
 });
 
 

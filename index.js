@@ -2,9 +2,11 @@ var express = require("express");
 var cors = require("cors");
 var bodyParser = require("body-parser");
 var user = require('./routes/user');
+var mongoose = require("mongoose");
 var app = express();
 
-
+var uri = "mongodb://elms:elms@ds025419.mlab.com:25419/elms";
+mongoose.connect(uri , {useNewUrlParser: true});
 
 
 app.use(bodyParser.json({limit: '5000kb'}));

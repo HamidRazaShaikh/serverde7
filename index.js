@@ -10,7 +10,7 @@ var app = express();
 app.use(bodyParser.json({limit: '5000kb'}));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
-app.use('./user', user );
+app.use('/user', user );
 
 
 app.set('port', process.env.PORT || 5000);

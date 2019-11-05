@@ -5,7 +5,7 @@ var user = require('./routes/user');
 var mongoose = require("mongoose");
 var app = express();
 
-var uri = "mongodb://elms:elms@ds025419.mlab.com:25419/elms";
+var uri = "mongodb+srv://asdf:asdf@cluster0-v4e3c.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(uri , {useNewUrlParser: true});
 
 

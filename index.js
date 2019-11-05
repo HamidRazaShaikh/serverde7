@@ -1,26 +1,16 @@
 var express = require("express");
 var cors = require("cors");
 var bodyParser = require("body-parser");
+var user = require('./routes/user');
 var app = express();
 
-var data = [];
+
 
 
 app.use(bodyParser.json({limit: '5000kb'}));
 app.use(bodyParser.urlencoded({extended: false}));
-
 app.use(cors());
-
-app.get ('/get',function (req,res){
-    res.send({data : data});
-    console.log(data);
-});
-
-app.post('/add', function (req, res) {
-    data.push(req.body);
-    console.log(req.body);
-    res.send({status: 200, data: data})
-});
+app.use('./user', user )
 
 
 app.set('port', process.env.PORT || 5000);
